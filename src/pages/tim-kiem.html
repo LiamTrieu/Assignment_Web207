@@ -93,7 +93,7 @@
                       </div>
                       <div class="buttons_added">
                         <b style="line-height: 2rem; margin-right: 10px"
-                          >Sô lượng:</b
+                          >Số lượng:</b
                         >
                         <input
                           class="minus is-form"
@@ -101,6 +101,7 @@
                           value="-"
                           ng-click="updateSl(false)" />
                         <input
+                        readonly
                           aria-label="quantity"
                           class="input-qty"
                           max="{{sp.soluong}}"
@@ -169,7 +170,7 @@
                       </div>
                       <div class="buttons_added">
                         <b style="line-height: 2rem; margin-right: 10px"
-                          >Sô lượng:</b
+                          >Số lượng:</b
                         >
                         <input
                           class="minus is-form"
@@ -177,6 +178,7 @@
                           value="-"
                           ng-click="updateSl(false)" />
                         <input
+                          readonly
                           aria-label="quantity"
                           class="input-qty"
                           max="{{sp.soluong}}"

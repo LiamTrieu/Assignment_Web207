@@ -1,6 +1,7 @@
 window.tintucCtrl = function ($scope, $http, loadData) {
   loadData.loadProduct();
   loadData.loadCategory();
+  loadData.loadGH();
   $scope.danhSachTinTuc = [];
 
   $http.get(apiTT).then(function (response) {

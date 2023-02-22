@@ -5,10 +5,13 @@ window.sanPhamCateCtrl = function (
   checkLogin,
   $routeParams,
   $rootScope,
-  loadData
+  loadData,
+  $location,
+  addCart
 ) {
   loadData.loadProduct();
   loadData.loadCategory();
+  loadData.loadGH();
   $http.get(apiCategory + "/" + $routeParams.id).then(function (response) {
     $scope.cateView = response.data.name;
   });
@@ -34,44 +37,93 @@ window.sanPhamCateCtrl = function (
       $scope.sp = response.data;
     });
   };
-  $scope.addCart = function (id) {
-    var cart = {
-      user: idUser,
-      product: id,
-      status: 0,
-      soluong: $scope.slMua,
-    };
-    if ($scope.checkSP(id)) {
-      $http.post(apiCart, cart).then(function () {});
+  $scope.addCart2 = function (id, check) {
+    if (checkLogin.checkLogin()) {
+      if ($scope.sp.soluong > 0) {
+        if (check) {
+          $http.get(apiProduct + "/" + id).then(function (r) {
+            var cart = {
+              user: idUser,
+              product: [
+                {
+                  idsp: id,
+                  name: r.data.name,
+                  sl: $scope.slMua,
+                  price: r.data.price,
+                  img: r.data.img,
+                  status: 1,
+                },
+              ],
+              ten: $scope.dc.ten,
+              sdt: $scope.dc.sdt,
+              diachi: $scope.dc.dc,
+            };
+            $location.path("san-pham-da-mua");
+            alert("Mua sản phẩm thành công");
+            $http.post(apiCart, cart);
+          });
+        } else {
+          alert("Thiếu thông tin");
+        }
+      } else {
+        alert("Sản phẩm đã hết hàng");
+      }
     } else {
-      console.log($scope.sp);
-      var cart2 = {
-        user: idUser,
-        product: id,
-        status: 0,
-        soluong: $scope.slCo + $scope.slMua,
-      };
-      console.log(cart2);
-      $http.put(apiCart + "/" + $scope.idgh, cart2).then(function () {});
+      alert("Vui lòng đăng nhập");
+    }
+  };
+  $scope.addCart = function (id) {
+    if (checkLogin.checkLogin()) {
+      if ($scope.sp.soluong > 0) {
+        $http.get(apiAccount + "/" + idUser).then(function (response) {
+          user = response.data;
+          if (user.cart != []) {
+            var flag = true;
+            user.cart.forEach((e) => {
+              if (id == e.idsp) {
+                user.cart[user.cart.indexOf(e)].soluong += $scope.slMua;
+                flag = false;
+              }
+            });
+            if (flag) {
+              user.cart.push({
+                idsp: id,
+                soluong: $scope.slMua,
+              });
+            }
+          } else {
+            user.cart.push({
+              idsp: id,
+              soluong: $scope.slMua,
+            });
+          }
+          alert("Đã thêm sản phẩm vào giỏ hàng");
+          addCart.add(user);
+        });
+      } else {
+        alert("Sản phẩm đã hết hàng");
+      }
+    } else {
+      alert("Vui lòng đăng nhập");
     }
   };
   $scope.updateSl = function (TG) {
     if (TG) {
-      $scope.slMua++;
+      if ($scope.slMua < $scope.sp.soluong) {
+        $scope.slMua++;
+      }
     } else {
-      $scope.slMua--;
+      if ($scope.slMua > 1) {
+        $scope.slMua--;
+      }
     }
   };
 
-  $http.get(apiProduct).then(function (response) {
-    if (response.status === 200) {
-      var prd = [];
-      response.data.forEach(function (e) {
-        if (e.category == $routeParams.id) {
-          prd.push(e);
-        }
-      });
-      $rootScope.product = prd;
-    }
-  });
+  $http
+    .get(apiProduct + "?category=" + $routeParams.id)
+    .then(function (response) {
+      if (response.status === 200) {
+        $rootScope.product = response.data;
+      }
+    });
 };

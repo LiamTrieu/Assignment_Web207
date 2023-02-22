@@ -1,52 +1,184 @@
 {
   "product": [
     {
-      "name": "Khăn Choàng Vải Nylon 1",
-      "price": 1000000,
-      "soluong": null,
-      "soluongban": null,
+      "name": "Áo phông (T-Shirt)",
+      "price": 300000,
+      "soluong": 200,
+      "soluongban": 0,
       "img": "san-pham-1.jpg",
-      "dis": "Một chiếc áo khăn choàng có mũ trùm đầu có thể được mặc vào bất cứ lúc nào. Bỏ túi tiện lợi để cất trữ.",
+      "dis": "Loại áo phổ biến nhất, được làm từ chất liệu cotton và có kiểu dáng đơn giản với cổ tròn và tay ngắn.",
       "category": "1",
       "deleted": false,
-      "date": "2023-02-21T08:13:32.746Z",
+      "date": "2023-02-22T06:14:52.328Z",
       "id": 1
     },
     {
-      "name": "Khăn Choàng Vải Nylon 2",
-      "price": 1500000,
+      "name": "Áo sơ mi (Shirt)",
+      "price": 200000,
       "soluong": null,
-      "soluongban": 1,
+      "soluongban": 0,
       "img": "san-pham-2.jpg",
-      "dis": "Một chiếc áo khăn choàng có mũ trùm đầu có thể được mặc vào bất cứ lúc nào. Bỏ túi tiện lợi để cất trữ.",
-      "category": "2",
+      "dis": "Kiểu áo được làm từ chất liệu cotton hoặc linen với kiểu dáng có cổ áo, nút cài trước và tay dài.",
+      "category": "1",
       "deleted": false,
-      "date": "2023-02-21T08:14:04.228Z",
+      "date": "2023-02-22T06:15:23.945Z",
       "id": 2
     },
     {
-      "name": "Khăn Choàng Vải Nylon 4",
-      "price": 2000000,
-      "soluong": null,
-      "soluongban": null,
-      "img": "san-pham-4.jpg",
-      "dis": "Một chiếc áo khăn choàng có mũ trùm đầu có thể được mặc vào bất cứ lúc nào. Bỏ túi tiện lợi để cất trữ.",
+      "name": "Áo khoác da (Leather jacket)",
+      "price": 150000,
+      "soluong": 400,
+      "soluongban": 0,
+      "img": "san-pham-3.jpg",
+      "dis": "Áo khoác được làm từ chất liệu da, thường có màu đen hoặc nâu, có thể có lớp lót bên trong và có các chi tiết đính nút hoặc khuy.",
       "category": "1",
       "deleted": false,
-      "date": "2023-02-21T08:15:10.757Z",
+      "date": "2023-02-22T06:15:52.800Z",
+      "id": 3
+    },
+    {
+      "name": "Áo khoác gió (Windbreaker)",
+      "price": 450000,
+      "soluong": null,
+      "soluongban": 0,
+      "img": "san-pham-4.jpg",
+      "dis": "Loại áo khoác thích hợp để sử dụng trong những ngày gió lạnh, thường được làm từ chất liệu nhẹ, chống thấm và có thể gập lại.",
+      "category": "2",
+      "deleted": false,
+      "date": "2023-02-22T06:16:19.184Z",
       "id": 4
     },
     {
-      "name": "Khăn Choàng Vải Nylon 5",
-      "price": 1000000,
-      "soluong": null,
-      "soluongban": 1,
+      "name": "Áo hoodie (Hoodie)",
+      "price": 100000,
+      "soluong": 80,
+      "soluongban": 0,
       "img": "san-pham-5.jpg",
-      "dis": "Một chiếc áo khăn choàng có mũ trùm đầu có thể được mặc vào bất cứ lúc nào. Bỏ túi tiện lợi để cất trữ.",
+      "dis": "Áo len có mũ đầu, có thể có hoa văn hoặc hình ảnh in trên bề mặt.",
+      "category": "2",
+      "deleted": false,
+      "date": "2023-02-22T06:16:46.801Z",
+      "id": 5
+    },
+    {
+      "name": "Áo khoác bomber (Bomber jacket)",
+      "price": 300000,
+      "soluong": 10,
+      "soluongban": 0,
+      "img": "san-pham-6.jpg",
+      "dis": "Áo khoác đầu mùa được làm từ chất liệu nhẹ, thường có đường khâu chéo trên tay và thân áo.",
+      "category": "1",
+      "deleted": true,
+      "date": "2023-02-22T06:17:25.289Z",
+      "id": 6
+    },
+    {
+      "name": "Áo khoác denim (Denim jacket)",
+      "price": 130000,
+      "soluong": 20,
+      "soluongban": 0,
+      "img": "san-pham-7.jpg",
+      "dis": "Áo khoác được làm từ chất liệu vải denim, có thể có lớp lót bên trong và các chi tiết đính khuy.",
+      "category": "2",
+      "deleted": false,
+      "date": "2023-02-22T06:17:56.281Z",
+      "id": 7
+    },
+    {
+      "name": "Áo khoác dù (Rain jacket)",
+      "price": 160000,
+      "soluong": 20,
+      "soluongban": 0,
+      "img": "san-pham-8.jpg",
+      "dis": "Áo khoác chống mưa được làm từ chất liệu chống thấm, có thể có lớp lót bên trong và các chi tiết đính nút hoặc khuy.",
+      "category": "2",
+      "deleted": false,
+      "date": "2023-02-22T06:18:30.361Z",
+      "id": 8
+    },
+    {
+      "name": "Áo len (Sweater)",
+      "price": 300000,
+      "soluong": 40,
+      "soluongban": 0,
+      "img": "san-pham-9.jpg",
+      "dis": "Áo được làm từ chất liệu len, có thể có cổ áo hoặc không, tay dài hoặc tay ngắn.",
       "category": "1",
       "deleted": false,
-      "date": "2023-02-21T08:15:32.652Z",
-      "id": 5
+      "date": "2023-02-22T06:19:01.122Z",
+      "id": 9
+    },
+    {
+      "name": "Áo polo (Polo shirt)",
+      "price": 400000,
+      "soluong": 20,
+      "soluongban": 0,
+      "img": "san-pham-10.jpg",
+      "dis": "Kiểu áo phông có cổ áo và nút cài phía trước, thường được làm từ chất liệu cotton hoặc polyester.",
+      "category": "2",
+      "deleted": false,
+      "date": "2023-02-22T06:19:34.561Z",
+      "id": 10
+    },
+    {
+      "name": "Áo khoác phao (Puffer jacket)",
+      "price": 300000,
+      "soluong": 23,
+      "soluongban": 0,
+      "img": "san-pham-11.jpg",
+      "dis": "Áo khoác được làm từ chất liệu nylon hoặc polyester, có lớp lót bên trong và chứa đầy chất liệu bông để giữ ấm.",
+      "category": "2",
+      "deleted": false,
+      "date": "2023-02-22T06:20:03.218Z",
+      "id": 11
+    },
+    {
+      "name": "Áo khoác da lộn (Suede jacket)",
+      "price": 400000,
+      "soluong": 20,
+      "soluongban": 0,
+      "img": "san-pham-12.jpg",
+      "dis": "Áo khoác được làm từ chất liệu da lộn, có thể có lớp lót bên trong và các chi tiết đính nút hoặc khuy.",
+      "category": "2",
+      "deleted": false,
+      "date": "2023-02-22T06:20:42.682Z",
+      "id": 12
+    },
+    {
+      "name": "Áo vest (Vest)",
+      "price": 300000,
+      "soluong": 40,
+      "soluongban": 0,
+      "img": "san-pham-13.jpg",
+      "dis": "Áo không tay được đeo trên áo sơ mi hoặc áo phông, thường được làm từ chất liệu vải.",
+      "category": "1",
+      "deleted": false,
+      "date": "2023-02-22T06:21:05.499Z",
+      "id": 13
+    },
+    {
+      "name": "Áo bò (Chambray shirt)",
+      "price": 500000,
+      "soluong": 50,
+      "soluongban": 0,
+      "img": "san-pham-14.jpg",
+      "dis": "Áo sơ mi được làm từ chất liệu vải chambray, có kiểu dáng tương tự với áo sơ mi denim nhưng mềm hơn và có màu sáng hơn.",
+      "category": "1",
+      "deleted": false,
+      "date": "2023-02-22T06:21:42.764Z",
+      "id": 14
+    },
+    {
+      "name": "Áo khoác da rắn (Snake skin jacket)",
+      "price": 300000,
+      "soluong": 15,
+      "soluongban": 0,
+      "img": "san-pham-15.jpg",
+      "dis": "Áo khoác được làm từ da rắn, thường có màu sáng và có kiểu dáng đơn giản để làm nổi bật chất liệu của áo",
+      "category": "2",
+      "deleted": false,
+      "date": "2023-02-22T06:22:18.331Z",
+      "id": 15
     }
   ],
   "category": [
@@ -68,19 +200,11 @@
       "id": "1",
       "name": "admin",
       "email": "admin@admin",
-      "password": "a",
+      "password": "admin",
       "role": true,
       "cart": [
         {
           "idsp": 1,
-          "soluong": 3
-        },
-        {
-          "idsp": 5,
-          "soluong": 1
-        },
-        {
-          "idsp": "4",
           "soluong": 1
         }
       ]
@@ -100,26 +224,10 @@
       "product": [
         {
           "idsp": 1,
-          "name": "Khăn Choàng Vải Nylon 1",
+          "name": "Áo phông (T-Shirt)",
           "sl": 1,
-          "price": 1000000,
+          "price": 300000,
           "img": "san-pham-1.jpg",
-          "status": 1
-        },
-        {
-          "idsp": 4,
-          "name": "Khăn Choàng Vải Nylon 4",
-          "sl": 1,
-          "price": 2000000,
-          "img": "san-pham-4.jpg",
-          "status": 1
-        },
-        {
-          "idsp": 2,
-          "name": "Khăn Choàng Vải Nylon 2",
-          "sl": 1,
-          "price": 1500000,
-          "img": "san-pham-2.jpg",
           "status": 1
         }
       ],
@@ -127,60 +235,8 @@
       "sdt": "0987654321",
       "diachi": "aaa",
       "id": 1
-    },
-    {
-      "user": "1",
-      "product": [
-        {
-          "idsp": 5,
-          "name": "Khăn Choàng Vải Nylon 5",
-          "sl": 2,
-          "price": 1000000,
-          "img": "san-pham-5.jpg",
-          "status": 1
-        }
-      ],
-      "ten": "aa",
-      "sdt": "aa",
-      "diachi": "aa",
-      "id": 2
-    },
-    {
-      "user": "1",
-      "product": [
-        {
-          "idsp": 4,
-          "name": "Khăn Choàng Vải Nylon 4",
-          "sl": 2,
-          "price": 2000000,
-          "img": "san-pham-4.jpg",
-          "status": 1
-        }
-      ],
-      "ten": "cc",
-      "sdt": "cc",
-      "diachi": "cc",
-      "id": 3
-    },
-    {
-      "user": "1",
-      "product": [
-        {
-          "idsp": "4",
-          "name": "Khăn Choàng Vải Nylon 4",
-          "sl": 2,
-          "price": 2000000,
-          "img": "san-pham-4.jpg",
-          "status": 1
-        }
-      ],
-      "ten": "rrr",
-      "sdt": "rrr",
-      "diachi": "rrr",
-      "id": 4
     }
   ],
-  "cartCT": [],
   "tintuc": [
     {
       "anh": "tintuc1.jpg",

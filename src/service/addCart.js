@@ -5,5 +5,9 @@ app.service("addCart", function ($http, checkLogin, $rootScope) {
     add: function (cart) {
       $http.patch(apiAccount + "/" + user.id, cart);
     },
+    checkSL: function (sl, slsp) {
+      console.log(sl);
+      return sl > 0 && sl <= slsp;
+    },
   };
 });

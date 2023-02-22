@@ -25,9 +25,13 @@ window.trangChuCtrl = function (
   // };
   $scope.updateSl = function (TG) {
     if (TG) {
-      $scope.slMua++;
+      if ($scope.slMua < $scope.sp.soluong) {
+        $scope.slMua++;
+      }
     } else {
-      $scope.slMua--;
+      if ($scope.slMua > 1) {
+        $scope.slMua--;
+      }
     }
   };
   $scope.showCart = function (id) {
@@ -37,30 +41,34 @@ window.trangChuCtrl = function (
   };
   $scope.addCart2 = function (id, check) {
     if (checkLogin.checkLogin()) {
-      if (check) {
-        $http.get(apiProduct + "/" + id).then(function (r) {
-          var cart = {
-            user: idUser,
-            product: [
-              {
-                idsp: id,
-                name: r.data.name,
-                sl: $scope.slMua,
-                price: r.data.price,
-                img: r.data.img,
-                status: 1,
-              },
-            ],
-            ten: $scope.dc.ten,
-            sdt: $scope.dc.sdt,
-            diachi: $scope.dc.dc,
-          };
-          $location.path("san-pham-da-mua");
-          alert("Mua sản phẩm thành công");
-          $http.post(apiCart, cart);
-        });
+      if ($scope.sp.soluong > 0) {
+        if (check) {
+          $http.get(apiProduct + "/" + id).then(function (r) {
+            var cart = {
+              user: idUser,
+              product: [
+                {
+                  idsp: id,
+                  name: r.data.name,
+                  sl: $scope.slMua,
+                  price: r.data.price,
+                  img: r.data.img,
+                  status: 1,
+                },
+              ],
+              ten: $scope.dc.ten,
+              sdt: $scope.dc.sdt,
+              diachi: $scope.dc.dc,
+            };
+            $location.path("san-pham-da-mua");
+            alert("Mua sản phẩm thành công");
+            $http.post(apiCart, cart);
+          });
+        } else {
+          alert("Thiếu thông tin");
+        }
       } else {
-        alert("Thiếu thông tin");
+        alert("Sản phẩm đã hết hàng");
       }
     } else {
       alert("Vui lòng đăng nhập");
@@ -68,40 +76,38 @@ window.trangChuCtrl = function (
   };
   $scope.addCart = function (id) {
     if (checkLogin.checkLogin()) {
-      $http.get(apiAccount + "/" + idUser).then(function (response) {
-        user = response.data;
-        if (user.cart != []) {
-          var flag = true;
-          user.cart.forEach((e) => {
-            if (id == e.idsp) {
-              user.cart[user.cart.indexOf(e)].soluong += $scope.slMua;
-              flag = false;
+      console.log($scope.sp);
+      if ($scope.sp.soluong > 0) {
+        $http.get(apiAccount + "/" + idUser).then(function (response) {
+          user = response.data;
+          if (user.cart != []) {
+            var flag = true;
+            user.cart.forEach((e) => {
+              if (id == e.idsp) {
+                user.cart[user.cart.indexOf(e)].soluong += $scope.slMua;
+                flag = false;
+              }
+            });
+            if (flag) {
+              user.cart.push({
+                idsp: id,
+                soluong: $scope.slMua,
+              });
             }
-          });
-          if (flag) {
+          } else {
             user.cart.push({
               idsp: id,
               soluong: $scope.slMua,
             });
           }
-        } else {
-          user.cart.push({
-            idsp: id,
-            soluong: $scope.slMua,
-          });
-        }
-        alert("Đã thêm sản phẩm vào giỏ hàng");
-        addCart.add(user);
-      });
+          alert("Đã thêm sản phẩm vào giỏ hàng");
+          addCart.add(user);
+        });
+      } else {
+        alert("Sản phẩm đã hết hàng");
+      }
     } else {
       alert("Vui lòng đăng nhập");
-    }
-  };
-  $scope.updateSl = function (TG) {
-    if (TG) {
-      $scope.slMua++;
-    } else {
-      $scope.slMua--;
     }
   };
 };

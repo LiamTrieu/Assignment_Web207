@@ -3,5 +3,4 @@ window.apiProduct = url + "product";
 window.apiCategory = url + "category";
 window.apiAccount = url + "account";
 window.apiCart = url + "cart";
-window.apiCartCT = url + "cartCT";
 window.apiTT = url + "tintuc";

@@ -11,9 +11,10 @@ window.gioHangCtrl = function (
   // loadData.loadCategory();
   loadData.loadGH();
   var user = checkLogin.getUser();
-  var prd = $rootScope.product;
+  // var prd = $rootScope.product;
   var idUser = checkLogin.getUser().id;
   var sanPham = [];
+  $scope.ck = false;
   if (!checkLogin.checkLogin()) {
     alert("Vui lòng đăng nhập để sử dụng");
     $location.path("/dang-nhap");
@@ -36,6 +37,7 @@ window.gioHangCtrl = function (
   $scope.checkAll = function () {
     $scope.ck = !$scope.ck;
     if ($scope.ck) {
+      $scope.idSelect = [];
       $scope.sp.forEach(function (e) {
         $scope.idSelect.push(e);
       });
