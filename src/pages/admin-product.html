@@ -1,0 +1,144 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div>
+      <a class="navbar-brand" href="#"
+        ><b><i class="fa-solid fa-house"></i> Home</b></a
+      >
+    </div>
+  </div>
+</nav>
+<br /><br />
+<h4 class="text-center">Quản lý sản phẩm</h4>
+<br /><br />
+<div class="container body-admin">
+  <form class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Tên sản phẩm</label
+    >
+    <input
+      ng-model="getProduct.name"
+      type="text"
+      class="form-control"
+      placeholder="Nhập tên sản phẩm" />
+    <br /><br />
+    <label for="exampleFormControlInput1" class="form-label">Giá bán</label>
+    <input
+      type="number"
+      ng-model="getProduct.price"
+      class="form-control"
+      placeholder="Nhập giá bán" />
+    <br /><br />
+    <label for="exampleFormControlInput1" class="form-label">Số lượng</label>
+    <input
+      type="number"
+      ng-model="getProduct.soluong"
+      class="form-control"
+      placeholder="Nhập số lượng" />
+    <br /><br />
+    <label for="exampleFormControlInput1" class="form-label"
+      >Loại sản phẩm</label
+    >
+    <select
+      class="form-select"
+      ng-model="getProduct.category"
+      aria-label="Default select example">
+      <option value="{{cate.id}}" ng-repeat="cate in category">
+        {{cate.name}}
+      </option>
+    </select>
+    <br /><br /><label for="exampleFormControlInput1" class="form-label"
+      >Mô tả</label
+    >
+    <textarea
+      ng-model="getProduct.dis"
+      type="text"
+      class="form-control"
+      placeholder="Nhập giá bán"
+      cols="30"
+      rows="3"></textarea>
+    <br /><br />
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Ảnh sản phẩm</label>
+      <input
+        class="form-control"
+        type="file"
+        id="fileInput"
+        enctype="multipart/from-data" />
+    </div>
+    <br /><br />
+    <a
+      type="button"
+      class="btn btn-outline-success"
+      ng-click="uploadFile()"
+      href="#/admin/product/add">
+      Thêm sản phẩm
+    </a>
+    <a
+      type="button"
+      ng-href="{{checkSelect()}}"
+      ng-click="checkSelect()"
+      class="btn btn-outline-success">
+      Sửa sản phẩm
+    </a>
+  </form>
+  <br /><br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ảnh</th>
+        <th scope="col">Tên</th>
+        <th scope="col">Giá</th>
+        <th scope="col">SL</th>
+        <th scope="col">Ngày</th>
+        <th scope="col">Loại</th>
+        <th scope="col">Mô tả</th>
+        <th scope="col">Xóa</th>
+        <th scope="col">Chức năng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="prd in product">
+        <th scope="row">
+          <img
+            style="max-width: 60px; min-width: 60px"
+            src="/assets/img/san-pham/{{prd.img}}" />
+        </th>
+        <td>{{prd.name}}</td>
+        <td>{{fomatMoney(prd.price)}}</td>
+        <td>{{prd.soluong}}</td>
+        <td>{{prd.date | date:'dd/MM/yyyy'}}</td>
+        <td>{{getCate(prd.category)}}</td>
+        <td>{{prd.dis}}</td>
+        <td class="text-danger" ng-if="cate.deleted">Đã xóa</td>
+        <td class="text-success" ng-if="!cate.deleted">Chưa xóa</td>
+        <td>
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic mixed styles example">
+            <a
+              href="#/admin/product/detail/{{prd.id}}"
+              type="button"
+              class="btn btn-success">
+              <i class="fa-solid fa-eye"></i>
+            </a>
+            <a
+              ng-if="!prd.deleted"
+              href="#/admin/product/restore/{{prd.id}}"
+              type="button"
+              class="btn btn-danger">
+              <i class="fa-solid fa-trash-can"></i>
+            </a>
+            <a
+              href="#/admin/product/restore/{{prd.id}}"
+              ng-if="prd.deleted"
+              type="button"
+              class="btn btn-warning">
+              <i class="fa-solid fa-rotate-left"></i>
+            </a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

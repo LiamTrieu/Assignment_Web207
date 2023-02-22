@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <link rel="stylesheet" href="../css/plugin/fontawesome.css" />
+  <link rel="stylesheet" href="../css/plugin/bootstrap.css" />
+  <link rel="stylesheet" href="../css/custom/header.css" />
+  <link rel="stylesheet" href="../css/custom/admin.css" />
+  <link rel="stylesheet" href="../css/custom/trang-chu.css" />
+  <link rel="stylesheet" href="../css/custom/dang-nhap.css" />
+  <link rel="stylesheet" href="../css/custom/dang-ky.css" />
+  <link rel="stylesheet" href="../css/custom/quen-mat-khau.css" />
+  <link rel="stylesheet" href="../css/custom/footer.css" />
+  <link rel="stylesheet" href="../css/custom/gioi-thieu.css" />
+  <link rel="stylesheet" href="../css/custom/lien-he.css" />
+  <link rel="stylesheet" href="../css/custom/san-pham.css" />
+  <link rel="stylesheet" href="../css/custom/gio-hang.css" />
+  <link rel="stylesheet" href="../css/custom/tintuc.css" />
+  <body ng-app="myApp">
+    <!-- Open header -->
+    <header ng-include="urlHeader"></header>
+    <!-- Close header -->
+    <!-- Open main -->
+    <main ng-view></main>
+    <!-- Close main -->
+
+    <!-- Open Footer -->
+    <footer ng-include="urlFooter"></footer>
+    <!-- Close footer -->
+    <script src="../js/plugin/bootstrap.bundle.js"></script>
+    <!-- <script src="../js/plugin/bootstrap.js"></script> -->
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-route.min.js"></script>
+    <script src="../lib/angular-cookies.min.js"></script>
+
+    <script src="./router.js"></script>
+    <script src="./config/api.js"></script>
+
+    <script src="./service/checkLogin.js"></script>
+    <script src="./service/loadData.js"></script>
+    <script src="./service/shareData.js"></script>
+    <script src="./service/getGH.js"></script>
+    <script src="./service/setSelect.js"></script>
+    <script src="./service/addCart.js"></script>
+
+    <script src="./run.js"></script>
+    <script src="./controller/gio-hang.js"></script>
+
+    <script src="./controller/trang-chu.js"></script>
+    <script src="./controller/tintuc.js"></script>
+    <script src="./controller/san-pham.js"></script>
+    <script src="./controller/san-pham-cate.js"></script>
+    <script src="./controller/dang-nhap.js"></script>
+    <script src="./controller/header.js"></script>
+
+    <script src="./controller/product/admin-product.js"></script>
+    <script src="./controller/product/admin-product-add.js"></script>
+    <script src="./controller/product/admin-product-detail.js"></script>
+    <script src="./controller/product/admin-product-update.js"></script>
+    <script src="./controller/product/admin-product-remove.js"></script>
+
+    <script src="./controller/don-hang/don-hang.js"></script>
+
+    <script src="./controller/category/admin-category.js"></script>
+    <script src="./controller/category/admin-category-add.js"></script>
+    <script src="./controller/category/admin-category-remove.js"></script>
+    <script src="./controller/category/admin-category-detail.js"></script>
+    <script src="./controller/category/admin-category-update.js"></script>
+
+    <script src="./controller/detail.js"></script>
+    <script src="./controller/dang-ky.js"></script>
+    <script src="./controller/spmua.js"></script>
+    <script src="./controller/doimk.js"></script>
+  </body>
+</html>

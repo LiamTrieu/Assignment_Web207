@@ -1,0 +1,78 @@
+<div class="container gio-hang">
+  <title>Sản phẩm đã mua</title>
+  <br />
+  <br />
+  <h3 class="text-center" ng-if="(sp.length > 0)">
+    <hr />
+    <b>Không có sản phẩm nào</b><br />
+    <hr />
+    <br />
+  </h3>
+  <div>
+    <div class="row">
+      <div class="col-lg-3">
+        <select class="form-select" ng-model="trangThai">
+          <option selected value="">Tất cả sản phẩm</option>
+          <option value="1">Chờ Xác nhận</option>
+          <option value="2">Chờ giao</option>
+          <option value="3">Đang giao</option>
+          <option value="4">Đã giao</option>
+          <option value="5">Đã hủy</option>
+        </select>
+        <br />
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sản phẩm</th>
+          <th scope="col">Nơi nhận</th>
+          <th scope="col">Giá</th>
+          <th scope="col">Số lượng</th>
+          <th scope="col">Tổng</th>
+          <th scope="col">Trạng thái</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="s in prds | filter:{trangthai:trangThai}">
+          <th>
+            <img
+              style="max-width: 60px; min-width: 60px"
+              src="/assets/img/san-pham/{{s.img}}"
+              alt="" />
+            <span class="d-none d-lg-inline">{{s.name}}</span>
+          </th>
+          <td class="text-danger"><b>{{s.diachi}}</b></td>
+          <td class="text-danger"><b>{{fomatMoney(s.price)}}</b></td>
+          <td>{{s.soluong}}</td>
+          <td class="text-danger"><b>{{fomatMoney(s.tong)}}</b></td>
+          <td ng-if="s.trangthai == 1" class="text-success">
+            Chờ xác nhận
+            <button
+              class="btn btn-outline-danger"
+              ng-click="remove(s.id, s.idsp)">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </td>
+          <td ng-if="s.trangthai == 2" class="text-success">
+            Chờ giao
+            <button
+              class="btn btn-outline-danger"
+              ng-click="remove(s.id, s.idsp)">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </td>
+          <td ng-if="s.trangthai == 3" class="text-success">Đang giao</td>
+          <td ng-if="s.trangthai == 4" class="text-success text-success">
+            Đã giao
+          </td>
+          <td ng-if="s.trangthai == 5" class="text-success text-danger">
+            Đã hủy
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <br /><br />
+  </div>
+</div>

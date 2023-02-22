@@ -1,0 +1,141 @@
+<hr />
+<section class="dang-ky">
+  <title>Đăng ký</title>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <br />
+        <h2><b>TẠO MỘT TÀI KHOẢN</b></h2>
+        <br />
+        <div class="body-dang-ky container">
+          <br />
+          <p>
+            Chúng tôi sẽ gửi thư xác nhận đến địa chỉ email được liên kết với
+            tài khoản của bạn. Hãy kiểm tra email đến từ chúng tôi.
+          </p>
+          <br />
+          <form class="row" name="fromDK">
+            <h6 class="col-4">
+              <b>HỌ & TÊN <span class="text-danger">*</span></b>
+            </h6>
+            <br />
+            <br />
+            <br />
+            <div class="col-8">
+              <input
+                type="text"
+                name="ten"
+                class="form-control"
+                placeholder="Nhập tên của bạn"
+                ng-model="userRes.name"
+                required />
+            </div>
+            <h6 class="col-4">
+              <b>ĐỊA CHỈ EMAIL <span class="text-danger">*</span></b>
+            </h6>
+            <br />
+            <br />
+            <br />
+            <div class="col-8">
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="Nhập email hợp lệ"
+                ng-model="userRes.email" />
+            </div>
+            <h6 class="col-4">
+              <b>MẬT KHẨU <span class="text-danger">*</span></b>
+            </h6>
+            <br />
+            <br />
+            <br />
+            <div class="col-8">
+              <div class="input-group mb-3">
+                <input
+                  name="pass"
+                  type="password"
+                  class="form-control"
+                  ng-show="hidePass"
+                  ng-model="userRes.password"
+                  required />
+                <input
+                  type="text"
+                  name="pass2"
+                  class="form-control"
+                  ng-hide="hidePass"
+                  ng-model="userRes.password"
+                  required />
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  ng-click="showPass()">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <h6 class="col-4">
+              <b>NHẬP LẠI <span class="text-danger">*</span></b>
+            </h6>
+            <br />
+            <br />
+            <br />
+            <div class="col-8">
+              <div class="input-group mb-3">
+                <input
+                  name="pass2"
+                  type="password"
+                  class="form-control"
+                  ng-show="hidePass2"
+                  ng-model="pass2"
+                  required />
+                <input
+                  type="text"
+                  name="pass2"
+                  class="form-control"
+                  ng-hide="hidePass2"
+                  ng-model="pass2"
+                  required />
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  ng-click="showPass2()">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <hr />
+            <h5>
+              <b>THỎA THUẬN THÀNH VIÊN<span class="text-danger">*</span></b>
+            </h5>
+            <p class="text-secondary">
+              Bằng cách tạo tài khoản, bạn đồng ý với chính sách bảo mật và điều
+              khoản sử dụng của UNIQLO.
+            </p>
+            <br />
+            <br />
+            <div>
+              <input
+                class="form-check-input"
+                type="checkbox"
+                ng-model="checkbox" />
+              Tôi đồng ý với ĐIỀU KHOẢN SỬ DỤNG và CHÍNH SÁCH BẢO MẬT CỦA UNIQLO
+            </div>
+            <br /><br />
+            <br />
+            <div>
+              <a
+                type="submit"
+                class="btn btn-dark button-from-login"
+                ng-click="dangKy($event, fromDK.email.$invalid)">
+                <b>ĐĂNG KÝ</b>
+              </a>
+            </div>
+            <br /><br />
+            <br />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

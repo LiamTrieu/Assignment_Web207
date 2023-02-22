@@ -1,0 +1,122 @@
+<hr />
+<section class="quen-mat-khau">
+  <title>Đổi mật khẩu</title>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <br />
+        <h2><b>ĐẶT LẠI MẬT KHẨU CỦA BẠN</b></h2>
+        <br />
+        <div class="body-quen-mat-khau container">
+          <br />
+          <p>Điền đầy đủ thông tin bên dưới</p>
+          <br />
+          <form class="row">
+            <h6 class="col-3">
+              <b>Mật khẩu <span class="text-danger">*</span></b>
+            </h6>
+            <div class="col-8">
+              <div class="input-group mb-3">
+                <input
+                  name="pass"
+                  type="password"
+                  class="form-control"
+                  ng-show="hidePass"
+                  ng-model="userRes.password"
+                  required />
+                <input
+                  type="text"
+                  name="pass2"
+                  class="form-control"
+                  ng-hide="hidePass"
+                  ng-model="userRes.password"
+                  required />
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  ng-click="showPass()">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+              <p class="text-danger" ng-if="fromDK.pass.$invalid && checkFrom">
+                Mật khẩu phải hơn 8 ký tự
+              </p>
+            </div>
+            <br /><br /><br />
+            <h6 class="col-3">
+              <b>Mật khẩu mới <span class="text-danger">*</span></b>
+            </h6>
+            <div class="col-8">
+              <div class="input-group mb-3">
+                <input
+                  name="pass"
+                  type="password"
+                  class="form-control"
+                  ng-show="hidePass2"
+                  ng-model="userRes.password2"
+                  required />
+                <input
+                  type="text"
+                  name="pass2"
+                  class="form-control"
+                  ng-hide="hidePass2"
+                  ng-model="userRes.password2"
+                  required />
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  ng-click="showPass2()">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+              <p class="text-danger" ng-if="fromDK.pass.$invalid && checkFrom">
+                Mật khẩu phải hơn 8 ký tự
+              </p>
+            </div>
+            <br /><br /><br />
+            <h6 class="col-3">
+              <b>Nhập lại mật khẩu <span class="text-danger">*</span></b>
+            </h6>
+            <div class="col-8">
+              <div class="input-group mb-3">
+                <input
+                  name="pass"
+                  type="password"
+                  class="form-control"
+                  ng-show="hidePass3"
+                  ng-model="userRes.password3"
+                  required />
+                <input
+                  type="text"
+                  name="pass2"
+                  class="form-control"
+                  ng-hide="hidePass3"
+                  ng-model="userRes.password3"
+                  required />
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  ng-click="showPass3()">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+              <p class="text-danger" ng-if="fromDK.pass.$invalid && checkFrom">
+                Mật khẩu phải hơn 8 ký tự
+              </p>
+            </div>
+            <br /><br /><br />
+            <div>
+              <a
+                type="submit"
+                class="btn btn-dark button-from-login"
+                ng-click="doi()">
+                <b>Đổi mật khẩu</b>
+              </a>
+              <br /><br />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

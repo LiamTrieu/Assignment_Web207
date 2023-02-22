@@ -1,0 +1,72 @@
+<hr />
+<section class="dang-nhap">
+  <title>Đăng nhập</title>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 body-dang-nhap">
+        <br />
+        <h2><b>ĐĂNG NHẬP</b></h2>
+        <br />
+        <p>Đăng nhập bằng địa chỉ email và mật khẩu của bạn.</p>
+        <form>
+          <h5>
+            <b>ĐỊA CHỈ EMAIL <span class="text-danger">*</span></b>
+          </h5>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Nhập email hợp lệ"
+            ng-model="email_dang_nhap" />
+          <br />
+          <h5>
+            <b>MẬT KHẨU <span class="text-danger">*</span></b>
+          </h5>
+          <input
+            ng-hide="showpass"
+            type="password"
+            class="form-control"
+            ng-model="password_dang_nhap" />
+          <input
+            ng-show="showpass"
+            type="text"
+            class="form-control"
+            ng-model="password_dang_nhap" />
+          <p class="text-secondary">
+            Mật khẩu phải có ít nhất 8 ký tự và có cả chữ cái và số.
+          </p>
+          <input class="form-check-input" type="checkbox" ng-model="showpass" />
+          Hiện thị mật khẩu <br /><br /><br />
+          <a
+            type="submit"
+            class="btn btn-dark button-from-login"
+            ng-click="dangNhap($event)">
+            <b>Đăng nhập</b>
+          </a>
+          <br />
+          <a href="#/quen-mat-khau" class="text-dark qmk"
+            ><b>QUÊN MẬT KHẨU CỦA BẠN?</b></a
+          >
+        </form>
+        <br />
+        <br />
+      </div>
+      <div class="col-lg-6 body-dang-nhap">
+        <br />
+        <h2><b>TẠO MỘT TÀI KHOẢN</b></h2>
+        <br />
+        <p>
+          Hãy tạo tài khoản ngay ! Bạn có thể nhận được các dịch vụ đặc biệt cho
+          riêng bạn như kiểm tra lịch sử mua hàng và nhận phiếu giảm giá cho
+          thành viên. Đăng ký miễn phí ngay hôm nay!
+        </p>
+        <br /><a
+          href="#/dang-ky"
+          type="submit"
+          class="btn btn-dark button-from-login">
+          <b>TẠO TÀI KHOẢN</b>
+        </a>
+        <br /><br />
+      </div>
+    </div>
+  </div>
+</section>

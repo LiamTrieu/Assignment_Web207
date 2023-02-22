@@ -1,0 +1,216 @@
+{
+  "product": [
+    {
+      "name": "Khăn Choàng Vải Nylon 1",
+      "price": 1000000,
+      "soluong": null,
+      "soluongban": null,
+      "img": "san-pham-1.jpg",
+      "dis": "Một chiếc áo khăn choàng có mũ trùm đầu có thể được mặc vào bất cứ lúc nào. Bỏ túi tiện lợi để cất trữ.",
+      "category": "1",
+      "deleted": false,
+      "date": "2023-02-21T08:13:32.746Z",
+      "id": 1
+    },
+    {
+      "name": "Khăn Choàng Vải Nylon 2",
+      "price": 1500000,
+      "soluong": null,
+      "soluongban": 1,
+      "img": "san-pham-2.jpg",
+      "dis": "Một chiếc áo khăn choàng có mũ trùm đầu có thể được mặc vào bất cứ lúc nào. Bỏ túi tiện lợi để cất trữ.",
+      "category": "2",
+      "deleted": false,
+      "date": "2023-02-21T08:14:04.228Z",
+      "id": 2
+    },
+    {
+      "name": "Khăn Choàng Vải Nylon 4",
+      "price": 2000000,
+      "soluong": null,
+      "soluongban": null,
+      "img": "san-pham-4.jpg",
+      "dis": "Một chiếc áo khăn choàng có mũ trùm đầu có thể được mặc vào bất cứ lúc nào. Bỏ túi tiện lợi để cất trữ.",
+      "category": "1",
+      "deleted": false,
+      "date": "2023-02-21T08:15:10.757Z",
+      "id": 4
+    },
+    {
+      "name": "Khăn Choàng Vải Nylon 5",
+      "price": 1000000,
+      "soluong": null,
+      "soluongban": 1,
+      "img": "san-pham-5.jpg",
+      "dis": "Một chiếc áo khăn choàng có mũ trùm đầu có thể được mặc vào bất cứ lúc nào. Bỏ túi tiện lợi để cất trữ.",
+      "category": "1",
+      "deleted": false,
+      "date": "2023-02-21T08:15:32.652Z",
+      "id": 5
+    }
+  ],
+  "category": [
+    {
+      "name": "ĐỒ MẶC NGOÀI",
+      "date": "21 - 2 - 2023",
+      "deleted": false,
+      "id": 1
+    },
+    {
+      "name": "ĐỒ MẶC TRONG",
+      "date": "21 - 2 - 2023",
+      "deleted": false,
+      "id": 2
+    }
+  ],
+  "account": [
+    {
+      "id": "1",
+      "name": "admin",
+      "email": "admin@admin",
+      "password": "a",
+      "role": true,
+      "cart": [
+        {
+          "idsp": 1,
+          "soluong": 3
+        },
+        {
+          "idsp": 5,
+          "soluong": 1
+        },
+        {
+          "idsp": "4",
+          "soluong": 1
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "test",
+      "email": "test@test",
+      "password": "a",
+      "role": false,
+      "cart": []
+    }
+  ],
+  "cart": [
+    {
+      "user": "1",
+      "product": [
+        {
+          "idsp": 1,
+          "name": "Khăn Choàng Vải Nylon 1",
+          "sl": 1,
+          "price": 1000000,
+          "img": "san-pham-1.jpg",
+          "status": 1
+        },
+        {
+          "idsp": 4,
+          "name": "Khăn Choàng Vải Nylon 4",
+          "sl": 1,
+          "price": 2000000,
+          "img": "san-pham-4.jpg",
+          "status": 1
+        },
+        {
+          "idsp": 2,
+          "name": "Khăn Choàng Vải Nylon 2",
+          "sl": 1,
+          "price": 1500000,
+          "img": "san-pham-2.jpg",
+          "status": 1
+        }
+      ],
+      "ten": "Trieu Tuong",
+      "sdt": "0987654321",
+      "diachi": "aaa",
+      "id": 1
+    },
+    {
+      "user": "1",
+      "product": [
+        {
+          "idsp": 5,
+          "name": "Khăn Choàng Vải Nylon 5",
+          "sl": 2,
+          "price": 1000000,
+          "img": "san-pham-5.jpg",
+          "status": 1
+        }
+      ],
+      "ten": "aa",
+      "sdt": "aa",
+      "diachi": "aa",
+      "id": 2
+    },
+    {
+      "user": "1",
+      "product": [
+        {
+          "idsp": 4,
+          "name": "Khăn Choàng Vải Nylon 4",
+          "sl": 2,
+          "price": 2000000,
+          "img": "san-pham-4.jpg",
+          "status": 1
+        }
+      ],
+      "ten": "cc",
+      "sdt": "cc",
+      "diachi": "cc",
+      "id": 3
+    },
+    {
+      "user": "1",
+      "product": [
+        {
+          "idsp": "4",
+          "name": "Khăn Choàng Vải Nylon 4",
+          "sl": 2,
+          "price": 2000000,
+          "img": "san-pham-4.jpg",
+          "status": 1
+        }
+      ],
+      "ten": "rrr",
+      "sdt": "rrr",
+      "diachi": "rrr",
+      "id": 4
+    }
+  ],
+  "cartCT": [],
+  "tintuc": [
+    {
+      "anh": "tintuc1.jpg",
+      "title": "UNIQLO TRANG PHỤC GIẢ LÔNG CỪU: GIỮ ẤM CHO MỌI NGƯỜI",
+      "noidung": "Sự pha trộn Hè x Thu, trang phục xu hướng với sự thoải mái trong suốt thời tiết nóng bức!"
+    },
+    {
+      "anh": "tintuc2.jpg",
+      "title": "Phong cách giao mùa",
+      "noidung": "Chất lượng, kết cấu và màu sắc sang trọng của hàng dệt kim UNIQLO nâng tầm trang phục hàng ngày của bạn."
+    },
+    {
+      "anh": "tintuc3.jpg",
+      "title": "TRANG PHỤC ĐA NĂNG CHO CẢ NAM VÀ NỮ",
+      "noidung": "Cùng bước qua giới hạn của trang phục dành cho nam và nữ."
+    },
+    {
+      "anh": "tintuc4.jpg",
+      "title": "STYLE FEELS WARMTH",
+      "noidung": "Sản phẩm HEATTECH của chúng tôi không ngừng cải tiến mang đến sự thoải mái hơn nữa."
+    },
+    {
+      "anh": "tintuc5.jpg",
+      "title": "Bộ sưu tập Polo",
+      "noidung": "Giản dị, Thanh lịch và Năng động, dòng sản phẩm áo polo từ UNIQLO phù hợp cho nhiều cá tính thời trang khác nhau."
+    },
+    {
+      "anh": "tintuc6.jpg",
+      "title": "ALL SCENES IN ONE",
+      "noidung": "Bộ sưu tập áo khoác Ultra Light Down Siêu Nhẹ. Nhẹ nhàng nhưng ấm áp đáng kinh ngạc."
+    }
+  ]
+}

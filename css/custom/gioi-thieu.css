@@ -1,0 +1,15 @@
+.gioi-thieu h3 {
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+
+.gioi-thieu p {
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.gioi-thieu .hr-hoat-dong {
+    margin-top: -20px;
+    margin-bottom: 40px;
+}

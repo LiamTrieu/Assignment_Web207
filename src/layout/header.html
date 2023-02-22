@@ -1,0 +1,159 @@
+<div class="container" ng-controller="headerCtrl">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between">
+      <div>
+        <button
+          class="navbar-toggler menuButton"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <a class="navbar-brand" href="#"
+        ><img class="logo" src="../../assets/img/Uniqlo-logo.png" alt=""
+      /></a>
+      <div>
+        <a
+          ng-if="!isLogin"
+          type="button"
+          href="#/dang-nhap"
+          class="btn btn-primary buttomNav2 d-lg-none">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <div class="btn-group dropstart d-lg-none drop-account" ng-if="isLogin">
+          <a
+            ng-if="isLogin"
+            type="button"
+            href="#"
+            class="btn btn-primary taiKhoan buttomNav buttomNava"
+            data-bs-toggle="dropdown">
+            <i class="fa-regular fa-user"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li ng-if="user.role">
+              <a class="dropdown-item" href="#/admin/product"
+                >Trang quản lý <i class="fa-solid fa-screwdriver-wrench"></i
+              ></a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                >Đổi mật khẩu <i class="fa-solid fa-caret-right"></i
+              ></a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#" ng-click="logout()"
+                >Đăng xuất <i class="fa-solid fa-right-from-bracket"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <a
+          href="#/gio-hang"
+          type="button"
+          class="btn btn-primary position-relative buttomNav2 d-lg-none">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="position-absolute badge rounded-pill bg-danger">
+            {{countCart}}
+          </span>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link active barmenu"
+              aria-current="page"
+              href="#/trang-chu"
+              ><span>TRANG CHỦ</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link barmenu" aria-current="page" href="#/san-pham"
+              ><span>SẢN PHẨM</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link barmenu" aria-current="page" href="#/gioi-thieu"
+              ><span>GIỚI THIỆU</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link barmenu" aria-current="page" href="#/tin-tuc"
+              ><span>TIN TỨC</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link barmenu" aria-current="page" href="#/lien-he"
+              ><span>LIÊN HỆ</span></a
+            >
+          </li>
+        </ul>
+        <div class="dropdown">
+          <form class="d-flex searchnav" role="search">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Tìm kiếm sản phẩm ở đây  "
+                ng-model="search" />
+              <a href="#/tim-kiem/{{search}}"
+                ><button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  id="button-addon2">
+                  <i class="fa-solid fa-magnifying-glass"></i></button
+              ></a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <a
+        ng-if="!isLogin"
+        type="button"
+        href="#/dang-nhap"
+        class="btn btn-primary taiKhoan buttomNav d-none d-lg-block">
+        <i class="fa-regular fa-user"></i> Đăng nhập
+      </a>
+      <div class="btn-group d-none d-lg-block drop-account" ng-if="isLogin">
+        <a
+          ng-if="isLogin"
+          type="button"
+          class="btn btn-primary taiKhoan buttomNav"
+          data-bs-toggle="dropdown">
+          <i class="fa-regular fa-user"></i> {{user.name}}
+        </a>
+        <ul class="dropdown-menu">
+          <li ng-if="user.role">
+            <a class="dropdown-item" href="#/admin/product"
+              >Trang quản lý <i class="fa-solid fa-screwdriver-wrench"></i
+            ></a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#/doi-mat-khau"
+              >Đổi mật khẩu <i class="fa-solid fa-caret-right"></i
+            ></a>
+          </li>
+          <li>
+            <a class="dropdown-item" ng-click="logout()"
+              >Đăng xuất <i class="fa-solid fa-right-from-bracket"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <a
+        type="button"
+        class="btn btn-primary position-relative gioHang buttomNav d-none d-lg-block"
+        href="#/gio-hang">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="position-absolute badge rounded-pill bg-danger">
+          {{countCart}}
+        </span>
+      </a>
+    </div>
+  </nav>
+</div>

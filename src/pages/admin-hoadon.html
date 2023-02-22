@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div>
+      <a class="navbar-brand" href="#"
+        ><b><i class="fa-solid fa-house"></i> Home</b></a
+      >
+    </div>
+  </div>
+</nav>
+<br />
+<h4 class="text-center">Quản lý đơn hàng</h4>
+<div class="container body-admin">
+  <br /><br />
+  <div class="col-lg-3">
+    <select class="form-select" ng-model="trangThai ">
+      <option selected value="">Tất cả sản phẩm</option>
+      <option value="1">Chờ Xác nhận</option>
+      <option value="2">Chờ giao</option>
+      <option value="3">Đang giao</option>
+      <option value="4">Đã giao</option>
+      <option value="5">Đã hủy</option>
+    </select>
+    <br />
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">STT</th>
+        <th scope="col">Sản phẩm</th>
+        <th scope="col">Thông tin</th>
+        <th scope="col">Trạng thái</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="dh in donHang | filter:{trangthai:trangThai}">
+        <th scope="row">{{$index+1}}</th>
+        <td>{{dh.sanPham}}</td>
+        <td>{{dh.thongTin}}</td>
+        <td>
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic mixed styles example">
+            <button
+              ng-click="chage(2, dh.id,dh.idsp, $event)"
+              ng-if="dh.trangthai == 1"
+              type="button"
+              class="btn btn-success">
+              <i class="fa-solid fa-check"></i>
+            </button>
+            <button
+              ng-click="chage(3, dh.id,dh.idsp, $event)"
+              ng-if="dh.trangthai == 2"
+              type="button"
+              class="btn btn-warning">
+              <i class="fa-sharp fa-solid fa-truck-fast"></i>
+            </button>
+            <button
+              ng-click="chage(4, dh.id,dh.idsp, $event)"
+              ng-if="dh.trangthai == 3"
+              type="button"
+              class="btn btn-info">
+              <i class="fa-solid fa-money-bill-wave"></i>
+            </button>
+            <button
+              ng-click="chage(5, dh.id, dh.idsp, $event)"
+              ng-if="dh.trangthai < 4"
+              type="button"
+              class="btn btn-danger">
+              <i class="fa-solid fa-ban"></i>
+            </button>
+            <b ng-if="dh.trangthai == 4" class="text-success">Hoàn thành</b>
+            <b ng-if="dh.trangthai == 5" class="text-danger">Đã hủy</b>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

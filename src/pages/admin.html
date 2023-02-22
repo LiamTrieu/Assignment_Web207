@@ -1,0 +1,38 @@
+<section class="admin">
+  <title>Trang quản lý</title>
+  <div class="row">
+    <div class="col-2 admin-menu">
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand menu-bar"
+            ><i class="fa-solid fa-screwdriver-wrench"></i> QUẢN LÝ</a
+          >
+        </div>
+      </nav>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand menu-bar2" href="#/admin/product"
+            ><i class="fa-solid fa-pen-to-square"></i> SẢN PHẨM</a
+          >
+        </div>
+      </nav>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand menu-bar2" href="#/admin/category"
+            ><i class="fa-solid fa-pen-to-square"></i> THỂ LOẠI</a
+          >
+        </div>
+      </nav>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand menu-bar2" href="#/admin/don-hang"
+            ><i class="fa-solid fa-box"></i> ĐƠN HÀNG</a
+          >
+        </div>
+      </nav>
+    </div>
+    <div class="col-10">
+      <div ng-include="urlAdmin"></div>
+    </div>
+  </div>
+</section>

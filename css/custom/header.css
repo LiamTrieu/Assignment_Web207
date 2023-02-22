@@ -1,0 +1,134 @@
+.container-fluid {
+    padding: 0 !important;
+}
+
+.logo {
+    width: 85px;
+}
+
+
+header .navbar {
+    padding: 0;
+}
+
+
+.barmenu {
+    color: black !important;
+    font-weight: 600;
+    padding: 5px 0px !important;
+    display: block !important;
+    margin: 10px;
+}
+
+.barmenu:hover span {
+    padding-bottom: 3px !important;
+    border-bottom: 2px solid #378694
+}
+
+.searchnav button {
+    background-color: white !important;
+    border: none;
+    color: black;
+
+}
+
+.searchnav {
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.searchnav button:hover {
+    color: black;
+
+}
+
+.searchnav input {
+    background-color: white !important;
+    border: none;
+}
+
+.searchnav input:focus {
+    box-shadow: none !important;
+}
+
+
+.buttomNav {
+    border: none;
+    background-color: white !important;
+    color: black !important;
+}
+
+.buttomNav:focus-visible,
+.buttomNav:active {
+    color: black !important;
+    box-shadow: none !important;
+}
+
+.buttomNav2 {
+    border: none;
+    color: black;
+    background-color: transparent !important;
+    padding: 5px;
+}
+
+.buttomNav2:hover {
+    color: #378694;
+}
+
+
+
+.buttomNav span {
+    padding: 5px;
+    font-size: 10px;
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.buttomNav2 span {
+    padding: 3px 5px 5px 5px;
+    font-size: 9px;
+    width: 15px;
+    height: 15px;
+}
+
+.buttomNav:hover {
+    color: #378694;
+}
+
+.gioHang>span {
+    top: -5px !important;
+}
+
+.gioHang {
+    background-color: rgb(230, 230, 230) !important;
+    line-height: 30px;
+    border-radius: 50%;
+}
+
+.taiKhoan {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.menuButton {
+    border: none !important;
+    color: black;
+}
+
+.menuButton:focus,
+.menuButton:focus-visible {
+    box-shadow: none !important;
+}
+
+.drop-account ul {
+    padding: 0;
+    min-width: 100px !important;
+}
+
+.buttomNava {
+    margin: 0 !important;
+    padding: 5px !important;
+}

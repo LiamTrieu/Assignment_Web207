@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div>
+      <a class="navbar-brand" href="#"
+        ><b><i class="fa-solid fa-house"></i> Home</b></a
+      >
+    </div>
+  </div>
+</nav>
+<br /><br />
+<h4 class="text-center">Quản lý thể loại sản phẩm</h4>
+<br /><br />
+<div class="container body-admin">
+  <form class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Tên loại sản phẩm</label
+    >
+    <input type="text" class="form-control" ng-model="cate.name" />
+    <br /><br /><a
+      href="#/admin/category/add"
+      type="button"
+      class="btn btn-outline-success">
+      Thêm loại sản phẩm
+    </a>
+    <a
+      ng-href="{{checkSlect()}}"
+      ng-click="checkSlected()"
+      type="button"
+      class="btn btn-outline-success">
+      Sửa loại sản phẩm
+    </a>
+  </form>
+  <br /><br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tên loại</th>
+        <th scope="col">Ngày thêm</th>
+        <th scope="col">Trạng thái</th>
+        <th scope="col">Chức năng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="cate in category">
+        <th scope="row">{{cate.id}}</th>
+        <td>{{cate.name}}</td>
+        <td>{{cate.date}}</td>
+        <td class="text-danger" ng-if="cate.deleted">Đã xóa</td>
+        <td class="text-success" ng-if="!cate.deleted">Chưa xóa</td>
+        <td>
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic mixed styles example">
+            <a
+              href="#/admin/category/detail/{{cate.id}}"
+              type="button"
+              class="btn btn-success">
+              <i class="fa-solid fa-eye"></i>
+            </a>
+            <a
+              ng-if="!cate.deleted"
+              type="button"
+              class="btn btn-danger"
+              href="#/admin/category/remove/{{cate.id}}">
+              <i class="fa-solid fa-trash-can"></i>
+            </a>
+            <a
+              href="#/admin/category/restore/{{cate.id}}"
+              ng-if="cate.deleted"
+              type="button"
+              class="btn btn-warning">
+              <i class="fa-solid fa-rotate-left"></i>
+            </a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,166 @@
+.san-pham {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.san-pham .menu-categories-lg ul {
+    padding: 0;
+    margin: 0;
+}
+
+.san-pham .menu-categories-lg {
+    border: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.san-pham .menu-categories-lg li {
+    line-height: 50px;
+    list-style: none;
+    border-top: 1px solid black;
+    padding-left: 15px;
+}
+
+.san-pham .menu-categories-lg h7 {
+    padding-left: 15px;
+    line-height: 50px;
+}
+
+.san-pham .menu-categories-lg a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+.san-pham .tieu-de-cart-2>.noi-dung {
+    margin-top: 30px;
+    margin-right: 20%;
+    margin-left: 20%;
+    color: black;
+    font-weight: bolder;
+    line-height: 40px;
+    border: 1px solid black;
+}
+
+.san-pham .group-cart-title>.noi-dung {
+    line-height: 50px;
+    font-weight: bolder;
+    color: black;
+}
+
+.san-pham .group-cart-title {
+    height: 50px;
+    width: 250px;
+    /* background-color: black; */
+    border: 1px solid black;
+    border-bottom: none;
+    /* border-top-right-radius: 20px; */
+}
+
+.san-pham .tieu-de-cart {
+    margin-left: 10px;
+    padding: 0;
+    border-bottom: 1px solid black;
+}
+
+.san-pham .card {
+    margin-top: 25px;
+    border: none !important;
+}
+
+.san-pham .card:hover .card-button {
+    visibility: visible;
+    opacity: 1;
+}
+
+.san-pham .card-button {
+    font-weight: bolder;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.san-pham .card-button a {
+    margin: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.425);
+    border: none !important;
+}
+
+.san-pham .card-button a:hover {
+    background-color: rgba(255, 255, 255, 0.705);
+    color: #378694;
+}
+
+.san-pham .card-button a i {
+    font-size: larger;
+}
+
+.san-pham .card-img {
+    position: relative;
+}
+
+.san-pham .card-san-pham {
+    margin: 0;
+}
+
+.san-pham .card-san-pham>div {
+    padding: 0;
+    padding-left: 15px;
+}
+
+.buttons_added {
+    opacity: 1;
+    display: inline-block;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.is-form {
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    height: 2.2rem;
+    width: 1.9rem;
+    padding: 0;
+    text-shadow: 1px 1px 1px #fff;
+    border: 1px solid #ddd;
+}
+
+.is-form:focus,
+.input-text:focus {
+    outline: none;
+}
+
+.is-form.minus {
+    border-radius: 4px 0 0 4px;
+}
+
+.is-form.plus {
+    border-radius: 0 4px 4px 0;
+}
+
+.input-qty {
+    background-color: #fff;
+    height: 2.2rem;
+    text-align: center;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: 0;
+    border-right: 0;
+    padding: 0;
+}
+
+.input-qty::-webkit-outer-spin-button,
+.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

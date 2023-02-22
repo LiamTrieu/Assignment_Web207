@@ -1,0 +1,17 @@
+<div class="container tin-tuc">
+  <h2 class="tt text-center"><b>TIN THỜI TRANG</b></h2>
+  <div class="row">
+    <div class="col-6" ng-repeat="tt in danhSachTinTuc">
+      <div class="card" style="width: 100%">
+        <img
+          src="../../assets/img/tintuc/{{tt.anh}}"
+          class="card-img-top"
+          alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{tt.title}}</h5>
+          <p class="card-text">{{tt.noidung}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

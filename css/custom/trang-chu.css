@@ -1,0 +1,129 @@
+.trang-chu {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.trang-chu .tieu-de-cart {
+    border-bottom: 1px solid black;
+}
+
+.trang-chu .group-cart-title {
+    height: 50px;
+    width: 250px;
+    /* background-color: black; */
+    border: 1px solid black;
+    border-bottom: none;
+    margin-top: 30px;
+    /* border-top-right-radius: 20px; */
+}
+
+.trang-chu .group-cart-title>.noi-dung {
+    line-height: 50px;
+    font-weight: bolder;
+    color: black;
+}
+
+
+.trang-chu .tieu-de-cart-2>.noi-dung {
+    margin-top: 30px;
+    margin-right: 20%;
+    margin-left: 20%;
+    color: black;
+    font-weight: bolder;
+    line-height: 40px;
+    border: 1px solid black;
+}
+
+.trang-chu .card {
+    margin-top: 25px;
+    border: none !important;
+}
+
+.trang-chu .card:hover .card-button {
+    visibility: visible;
+    opacity: 1;
+}
+
+.trang-chu .card-button {
+    font-weight: bolder;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.trang-chu .card-button a {
+    margin: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.425);
+    border: none !important;
+}
+
+.trang-chu .card-button a:hover {
+    background-color: rgba(255, 255, 255, 0.705);
+    color: #378694;
+}
+
+.trang-chu .card-button a i {
+    font-size: larger;
+}
+
+.trang-chu .card-img {
+    position: relative;
+}
+
+.buttons_added {
+    opacity: 1;
+    display: inline-block;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.is-form {
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    height: 2.2rem;
+    width: 1.9rem;
+    padding: 0;
+    text-shadow: 1px 1px 1px #fff;
+    border: 1px solid #ddd;
+}
+
+.is-form:focus,
+.input-text:focus {
+    outline: none;
+}
+
+.is-form.minus {
+    border-radius: 4px 0 0 4px;
+}
+
+.is-form.plus {
+    border-radius: 0 4px 4px 0;
+}
+
+.input-qty {
+    background-color: #fff;
+    height: 2.2rem;
+    text-align: center;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: 0;
+    border-right: 0;
+    padding: 0;
+}
+
+.input-qty::-webkit-outer-spin-button,
+.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

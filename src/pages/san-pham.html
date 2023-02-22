@@ -1,0 +1,250 @@
+<section class="san-pham">
+  <title>{{cateView}}</title>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="menu-categories-lg">
+          <h7>
+            <b><i class="fa-solid fa-bars"></i> DANH MỤC SẢN PHẨM</b>
+          </h7>
+          <ul>
+            <li><a href="#/san-pham">Tất cả sản phẩm</a></li>
+            <li ng-repeat="cate in category | filter: {deleted:false}">
+              <a href="#/san-pham/loai/{{cate.id}}">{{cate.name}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="body-san-pham col-lg-9">
+        <div class="tieu-de-cart d-lg-block d-none">
+          <div class="group-cart-title">
+            <p class="noi-dung text-center">{{cateView}}</p>
+          </div>
+        </div>
+        <div class="card-san-pham row">
+          <div
+            class="col-lg-3 col-md-4 col-6"
+            ng-repeat="prd in product | filter: {deleted:false}">
+            <a href="#/san-pham/{{prd.id}}">
+              <div class="card" style="width: 100%">
+                <div class="card-img">
+                  <img
+                    src="/assets/img/san-pham/{{prd.img}}"
+                    class="card-img-top" />
+                </div>
+                <div class="card-button d-flex justify-content-center">
+                  <a
+                    type="button"
+                    class="btn btn-outline-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    ng-click="showCart(prd.id)">
+                    <i class="fa-solid fa-cart-plus"></i>
+                  </a>
+                  <a
+                    type="button"
+                    class="btn btn-outline-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal2"
+                    ng-click="showCart(prd.id)">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                  </a>
+                </div>
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          Thêm vào giỏ hàng
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="card" style="width: 100%">
+                          <img
+                            src="../../assets/img/san-pham/{{sp.img}}"
+                            class="card-img-top"
+                            alt="..." />
+                          <div class="card-body">
+                            <h5 class="card-title">{{sp.name}}</h5>
+                            <h6 class="card-title text-danger">
+                              {{fomatMoney(sp.price)}}
+                            </h6>
+                            <div>
+                              Số lượng:
+                              <b class="text-success">{{sp.soluong}}</b> - Đã
+                              bán:
+                              <b class="text-danger">{{sp.soluongban}}</b>
+                            </div>
+                            <div class="buttons_added">
+                              <b style="line-height: 2rem; margin-right: 10px"
+                                >Sô lượng:</b
+                              >
+                              <input
+                                class="minus is-form"
+                                type="button"
+                                value="-"
+                                ng-click="updateSl(false)" />
+                              <input
+                                aria-label="quantity"
+                                class="input-qty"
+                                max="{{sp.soluong}}"
+                                min="1"
+                                type="number"
+                                ng-model="slMua" />
+                              <input
+                                class="plus is-form"
+                                type="button"
+                                value="+"
+                                ng-click="updateSl(true)" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal">
+                          Close
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-success"
+                          ng-click="addCart(sp.id)">
+                          Xác nhận
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="modal fade"
+                  id="exampleModal2"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          Mua sản phẩm
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"></button>
+                      </div>
+                      <br />
+                      <div class="container">
+                        <form name="myFrom">
+                          <h5><b>Thông tin thanh toán</b></h5>
+                          <input
+                            name="ten"
+                            class="form-control form-control-sm"
+                            type="text"
+                            placeholder="Họ và tên"
+                            ng-model="dc.ten"
+                            required />
+                          <br />
+                          <input
+                            name="sdt"
+                            class="form-control form-control-sm"
+                            type="text"
+                            placeholder="Số điện thoại"
+                            ng-model="dc.sdt"
+                            required />
+                          <br />
+                          <textarea
+                            name="diachi"
+                            class="form-control"
+                            aria-label="With textarea"
+                            placeholder="Địa chỉ"
+                            ng-model="dc.dc"
+                            required></textarea>
+                        </form>
+                      </div>
+                      <div class="modal-body">
+                        <div class="card" style="width: 100%">
+                          <div class="card-body">
+                            <h5 class="card-title">{{sp.name}}</h5>
+                            <h6 class="card-title text-danger">
+                              {{fomatMoney(sp.price)}}
+                            </h6>
+                            <div>
+                              Số lượng:
+                              <b class="text-success">{{sp.soluong}}</b> - Đã
+                              bán:
+                              <b class="text-danger">{{sp.soluongban}}</b>
+                            </div>
+                            <div class="buttons_added">
+                              <b style="line-height: 2rem; margin-right: 10px"
+                                >Sô lượng:</b
+                              >
+                              <input
+                                class="minus is-form"
+                                type="button"
+                                value="-"
+                                ng-click="updateSl(false)" />
+                              <input
+                                aria-label="quantity"
+                                class="input-qty"
+                                max="{{sp.soluong}}"
+                                min="1"
+                                type="number"
+                                ng-model="slMua" />
+                              <input
+                                class="plus is-form"
+                                type="button"
+                                value="+"
+                                ng-click="updateSl(true)" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal">
+                          Close
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-success"
+                          ng-click="addCart2(sp.id, myFrom.$valid)">
+                          Mua ngay
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h6
+                  style="margin-top: 10px; margin-bottom: 5px"
+                  class="card-title">
+                  {{prd.name}}
+                </h6>
+                <h5 class="card-text text-danger">
+                  <b>{{fomatMoney(prd.price)}}</b>
+                </h5>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

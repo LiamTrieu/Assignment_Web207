@@ -1,0 +1,154 @@
+<div class="container gio-hang">
+  <title>Giỏ hàng</title>
+  <br />
+  <div class="row">
+    <div class="col-10"></div>
+    <div class="col-lg-2">
+      <a href="#/san-pham-da-mua" type="button" class="btn btn-outline-info">
+        Sản phẩm đã mua
+      </a>
+    </div>
+  </div>
+  <br />
+  <h3 class="text-center" ng-if="!(sp.length > 0)">
+    <hr />
+    <b>Không có sản phẩm nào trong giỏ hàng</b><br />
+    <hr />
+    <br />
+  </h3>
+  <div ng-if="sp.length > 0">
+    <h6 class="text-warning"><b>Sản phẩm hiện có: {{sp.length}}</b></h6>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            <input type="checkbox" ng-click="checkAll(!ck)" />
+          </th>
+          <th scope="col">Sản phẩm</th>
+          <th scope="col">Giá</th>
+          <th scope="col">Số lượng</th>
+          <th scope="col">Tổng</th>
+          <th scope="col">Xóa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="s in sp">
+          <th>
+            <input
+              type="checkbox"
+              ng-click="getCheckbox(s)"
+              ng-checked="idSelect.indexOf(s) > -1" />
+          </th>
+          <th>
+            <img
+              style="max-width: 60px; min-width: 60px"
+              src="/assets/img/san-pham/{{s.img}}"
+              alt="" />
+            <span class="d-none d-lg-inline">{{s.name}}</span>
+          </th>
+          <td class="text-danger"><b>{{fomatMoney(s.price)}}</b></td>
+          <td>
+            <input style="width: 100px" type="number" ng-model="s.sl" />
+          </td>
+          <td class="text-danger"><b>{{fomatMoney(s.price*s.sl)}}</b></td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-danger"
+              ng-click="remove(s.idsp)">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between">
+      <div class="text-success"><b>Bạn đang chọn: 0</b></div>
+      <div>
+        <button type="button" class="btn btn-outline-dark" ng-click="update()">
+          Cập nhập
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-warning"
+          ng-click="removeselect()">
+          Xóa
+        </button>
+        <button type="button" class="btn btn-danger" ng-click="removeTong()">
+          Xóa tất cả sản phẩm
+        </button>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-6">
+        <form name="myFrom">
+          <hr />
+          <h5><b>Thông tin thanh toán</b></h5>
+          <input
+            name="ten"
+            class="form-control form-control-sm"
+            type="text"
+            placeholder="Họ và tên"
+            ng-model="dc.ten"
+            required />
+          <br />
+          <input
+            name="sdt"
+            class="form-control form-control-sm"
+            type="text"
+            placeholder="Số điện thoại"
+            ng-model="dc.sdt"
+            required />
+          <br />
+          <textarea
+            name="diachi"
+            class="form-control"
+            aria-label="With textarea"
+            placeholder="Địa chỉ"
+            ng-model="dc.dc"
+            required></textarea>
+        </form>
+      </div>
+      <div class="col-md-6 hoa-don">
+        <br />
+        <h5><b>Đơn hàng của bạn</b></h5>
+        <br />
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Sản phẩm</th>
+              <th scope="col">Giá</th>
+              <th scope="col">Tổng</th>
+            </tr>
+          </thead>
+          <tbody ng-repeat="s in idSelect">
+            <tr>
+              <td scope="row">{{s.name}} x{{s.sl}}</td>
+              <td>{{fomatMoney(s.price)}}</td>
+              <td>{{fomatMoney(s.price*s.sl)}}</td>
+            </tr>
+          </tbody>
+          <th>Số tiền thanh toán</th>
+          <th></th>
+          <th>{{fomatMoney(getTong2())}}</th>
+        </table>
+        <div class="d-flex justify-content-between">
+          <div></div>
+          <div class="text-danger"><b> </b></div>
+          <div class="text-danger"><b></b></div>
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-success"
+          ng-click="thanhToan($event, myFrom.$valid)">
+          <b><i class="fa-brands fa-bitcoin"> </i> Đặt hàng</b>
+        </button>
+        <br /><br />
+      </div>
+    </div>
+    <br /><br />
+  </div>
+</div>
