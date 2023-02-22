@@ -15,7 +15,7 @@
     {
       "name": "Áo sơ mi (Shirt)",
       "price": 200000,
-      "soluong": null,
+      "soluong": 200,
       "soluongban": 0,
       "img": "san-pham-2.jpg",
       "dis": "Kiểu áo được làm từ chất liệu cotton hoặc linen với kiểu dáng có cổ áo, nút cài trước và tay dài.",
@@ -39,7 +39,7 @@
     {
       "name": "Áo khoác gió (Windbreaker)",
       "price": 450000,
-      "soluong": null,
+      "soluong": 200,
       "soluongban": 0,
       "img": "san-pham-4.jpg",
       "dis": "Loại áo khoác thích hợp để sử dụng trong những ngày gió lạnh, thường được làm từ chất liệu nhẹ, chống thấm và có thể gập lại.",

@@ -25,6 +25,7 @@ window.trangChuCtrl = function (
   // };
   $scope.updateSl = function (TG) {
     if (TG) {
+      console.log("e");
       if ($scope.slMua < $scope.sp.soluong) {
         $scope.slMua++;
       }

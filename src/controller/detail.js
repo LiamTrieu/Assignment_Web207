@@ -23,17 +23,6 @@ window.detailCtrl = function (
   $http.get(apiProduct + "/" + $routeParams.id).then(function (response) {
     $scope.detailSp = response.data;
   });
-  $scope.updateSl = function (TG) {
-    if (TG) {
-      if ($scope.slMua < $scope.sp.soluong) {
-        $scope.slMua++;
-      }
-    } else {
-      if ($scope.slMua > 1) {
-        $scope.slMua--;
-      }
-    }
-  };
   $scope.checkSP = function () {
     let flag = true;
     getGH.getGH().forEach((e) => {
@@ -45,9 +34,20 @@ window.detailCtrl = function (
     });
     return flag;
   };
+  $scope.updateSl = function (TG) {
+    if (TG) {
+      if ($scope.slMua < $scope.detailSp.soluong) {
+        $scope.slMua++;
+      }
+    } else {
+      if ($scope.slMua > 1) {
+        $scope.slMua--;
+      }
+    }
+  };
   $scope.addCart = function () {
     if (checkLogin.checkLogin()) {
-      if ($scope.sp.soluong > 0) {
+      if ($scope.detailSp.soluong > 0) {
         $http.get(apiAccount + "/" + idUser).then(function (response) {
           user = response.data;
           if (user.cart != []) {
@@ -82,7 +82,7 @@ window.detailCtrl = function (
   };
   $scope.addCart2 = function (check) {
     if (checkLogin.checkLogin()) {
-      if ($scope.sp.soluong > 0) {
+      if ($scope.detailSp.soluong > 0) {
         if (check) {
           $http.get(apiProduct + "/" + id).then(function (r) {
             var cart = {

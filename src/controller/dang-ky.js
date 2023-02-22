@@ -19,6 +19,7 @@ window.dangKyCtrl = function (
     email: " ",
     password: "",
     role: false,
+    cart: [],
   };
   $rootScope.isLogin = checkLogin.checkLogin();
   if ($rootScope.isLogin) {
