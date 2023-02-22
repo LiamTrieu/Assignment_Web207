@@ -27,30 +27,31 @@ window.donhang = function ($scope, $http, shareData) {
   $scope.chage = function (trangthai, id, idsp, event) {
     var product = {};
     event.preventDefault();
-    $http.get(apiProduct + "/" + idsp).then(function (response) {
-      product = response.data;
-      if (trangthai == 2) {
-        product.soluong -= cart.product.sl;
-        $http.put(apiProduct + "/" + product.id, product);
-      }
-      if (trangthai == 4) {
-        product.soluongban += cart.product.sl;
-        $http.put(apiProduct + "/" + product.id, product);
-      }
-      if (trangthai == 5) {
-        if (cart.status > 1) {
-          product.soluong += cart.product.sl;
-        }
-        $http.put(apiProduct + "/" + product.id, product);
-      }
-    });
     var cart = {};
     $http.get(apiCart + "/" + id).then(function (response) {
       cart = response.data;
+
       cart.product.forEach(function (e) {
         if (e.idsp == idsp) {
           cart.product[cart.product.indexOf(e)].status = trangthai;
         }
+      });
+
+      $http.get(apiProduct + "/" + idsp).then(function (response) {
+        product = response.data;
+        cart.product.forEach(function (e) {
+          if (trangthai == 2) {
+            product.soluong -= e.sl;
+            product.soluongban += e.sl;
+          }
+          if (trangthai == 5) {
+            if (cart.status > 1) {
+              product.soluong += e.sl;
+              product.soluongban += e.sl;
+            }
+          }
+        });
+        $http.put(apiProduct + "/" + product.id, product);
       });
       $http.put(apiCart + "/" + id, cart).then(function () {
         alert("Đã đổi trạng thái đơn hàng");

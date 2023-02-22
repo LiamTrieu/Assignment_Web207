@@ -3,7 +3,7 @@
     {
       "name": "Áo phông (T-Shirt)",
       "price": 300000,
-      "soluong": 200,
+      "soluong": null,
       "soluongban": 0,
       "img": "san-pham-1.jpg",
       "dis": "Loại áo phổ biến nhất, được làm từ chất liệu cotton và có kiểu dáng đơn giản với cổ tròn và tay ngắn.",
@@ -15,7 +15,7 @@
     {
       "name": "Áo sơ mi (Shirt)",
       "price": 200000,
-      "soluong": 200,
+      "soluong": 199,
       "soluongban": 0,
       "img": "san-pham-2.jpg",
       "dis": "Kiểu áo được làm từ chất liệu cotton hoặc linen với kiểu dáng có cổ áo, nút cài trước và tay dài.",
@@ -228,13 +228,30 @@
           "sl": 1,
           "price": 300000,
           "img": "san-pham-1.jpg",
-          "status": 1
+          "status": 2
         }
       ],
       "ten": "Trieu Tuong",
       "sdt": "0987654321",
       "diachi": "aaa",
       "id": 1
+    },
+    {
+      "user": "1",
+      "product": [
+        {
+          "idsp": 2,
+          "name": "Áo sơ mi (Shirt)",
+          "sl": 1,
+          "price": 200000,
+          "img": "san-pham-2.jpg",
+          "status": 2
+        }
+      ],
+      "ten": "Trieu Tuong",
+      "sdt": "0987654321",
+      "diachi": "aaa",
+      "id": 2
     }
   ],
   "tintuc": [
