@@ -16,7 +16,7 @@ window.spmua = function (
     $location.path("/trang-chu");
   }
 
-  $scope.trangThai = "1";
+  $scope.trangThai = "";
   $http.get(apiCart + "?" + "user" + "=" + user.id).then(function (response) {
     var prd = {};
     response.data.forEach((e) => {

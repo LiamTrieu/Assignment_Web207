@@ -39,13 +39,19 @@
               ng-click="getCheckbox(s)"
               ng-checked="idSelect.indexOf(s) > -1" />
           </th>
+
           <th>
-            <img
-              style="max-width: 60px; min-width: 60px"
-              src="/assets/img/san-pham/{{s.img}}"
-              alt="" />
-            <span class="d-none d-lg-inline">{{s.name}}</span>
+            <a
+              href="#/san-pham/{{s.idsp}}"
+              style="text-decoration: none; color: black">
+              <img
+                style="max-width: 60px; min-width: 60px"
+                src="/assets/img/san-pham/{{s.img}}"
+                alt="" />
+              <span class="d-none d-lg-inline">{{s.name}}</span>
+            </a>
           </th>
+
           <td class="text-danger"><b>{{fomatMoney(s.price)}}</b></td>
           <td>
             <input style="width: 100px" type="number" ng-model="s.sl" />

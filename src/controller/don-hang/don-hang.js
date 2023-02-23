@@ -47,7 +47,7 @@ window.donhang = function ($scope, $http, shareData) {
           if (trangthai == 5) {
             if (cart.status > 1) {
               product.soluong += e.sl;
-              product.soluongban += e.sl;
+              product.soluongban -= e.sl;
             }
           }
         });

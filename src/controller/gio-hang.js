@@ -178,10 +178,11 @@ window.gioHangCtrl = function (
             cartgh.splice($scope.sp.indexOf(e), 1);
           }
         });
-        user.product = cartgh;
-        $http.post(apiCart, cart);
-        addCart.add(user);
-        alert("Đặt hàng thành công");
+        $http.post(apiCart, cart).then(function () {
+          user.cart = cartgh;
+          addCart.add(user);
+          alert("Đặt hàng thành công");
+        });
         $location.path("san-pham-da-mua");
       } else {
         alert("Thiếu thông tin");
