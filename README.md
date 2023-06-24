@@ -1,6 +1,6 @@
 ## Dự Front-End Frameworks AgularJS
 ### Cộng nghệ sử dụng: `AgularJS`
-### Thời gian phát triển: `01/02/2022 - 23/02/2022`
+### Thời gian phát triển: `01/2022 - 03/2022`
 ### Mô tả:
 Dự án này tập trung vào việc phát triển một trang web bán quần áo sử dụng AngularJS và JSON Server để tạo một API ảo. Trang web sẽ có các chức năng sau:
 
